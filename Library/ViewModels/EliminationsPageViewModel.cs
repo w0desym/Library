@@ -22,9 +22,6 @@ namespace Library.ViewModels
             : base(navigationService)
         {
             _bookService = bookService;
-
-            _TimePeriods = new() { -7, -30, -90 };
-            _SelectedTimePeriod = _TimePeriods[0];
         }
 
         #region -- Public properties --
@@ -36,7 +33,7 @@ namespace Library.ViewModels
             set => SetProperty(ref _SearchQuery, value);
         }
 
-        private ObservableCollection<BookBindableModel> _Books;
+        private ObservableCollection<BookBindableModel> _Books = new();
         public ObservableCollection<BookBindableModel> Books
         {
             get => _Books;
@@ -73,6 +70,8 @@ namespace Library.ViewModels
             base.OnAppearing();
 
             await LoadBooksAsync();
+
+            SetPeriods();
 
             PageState = EPageState.Normal;
         }
@@ -114,6 +113,13 @@ namespace Library.ViewModels
 
                 Books = new(_books);
             }
+        }
+
+        private void SetPeriods()
+        {
+            TimePeriods = new() { -7, -30, -90 };
+
+            SelectedTimePeriod = TimePeriods.FirstOrDefault();
         }
 
         private void FilterBooks()

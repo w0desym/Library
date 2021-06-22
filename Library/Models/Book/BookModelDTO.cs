@@ -38,7 +38,7 @@ namespace Library.Models.Book
                 Category = book.Category,
                 ReaderId = book.ReaderId,
                 FreeDate = book.FreeDate is null ? null : Convert.ToString(book.FreeDate),
-                EliminationDate = book.EliminationDate is null ? null : Convert.ToString(book.FreeDate)
+                EliminationDate = book.EliminationDate is null ? null : Convert.ToString(book.EliminationDate)
             };
         }
 

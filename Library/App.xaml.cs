@@ -29,9 +29,9 @@ namespace Library
             containerRegistry.RegisterPopupNavigationService();
 
             containerRegistry.Register<NavigationPage>();
-            containerRegistry.RegisterForNavigation<CatalogPage>();
-            containerRegistry.RegisterForNavigation<ReadersPage>();
-            containerRegistry.RegisterForNavigation<EliminationsPage>();
+            containerRegistry.RegisterForNavigation<CatalogPage, CatalogPageViewModel>();
+            containerRegistry.RegisterForNavigation<ReadersPage, ReadersPageViewModel>();
+            containerRegistry.RegisterForNavigation<EliminationsPage, EliminationsPageViewModel>();
 
             containerRegistry.RegisterForNavigation<NewReaderPopup, NewReaderPopupViewModel>();
             containerRegistry.RegisterForNavigation<NewBookPopup, NewBookPopupViewModel>();

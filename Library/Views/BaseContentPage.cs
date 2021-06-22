@@ -2,6 +2,7 @@ using Library.Interfaces;
 using Prism.Mvvm;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
+using System;
 using Page = Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page;
 
 namespace Library.Views
