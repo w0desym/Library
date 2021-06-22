@@ -1,8 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Library.App">
-    <Application.Resources>
+<prism:PrismApplication xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+                        xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:converters="clr-namespace:Library.Converters"
+                        x:Class="Library.App">
 
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" ApplyToDerivedTypes="True">
+                <Setter Property="Visual" Value="Material"/>
+            </Style>
+            <Style TargetType="Button" ApplyToDerivedTypes="True">
+                <Setter Property="Visual" Value="Material"/>
+            </Style>
+            <Style TargetType="Entry" ApplyToDerivedTypes="True">
+                <Setter Property="Visual" Value="Material"/>
+            </Style>
+            <Style TargetType="ActivityIndicator" ApplyToDerivedTypes="True">
+                <Setter Property="Visual" Value="Material"/>
+            </Style>
+            <Style TargetType="Picker" ApplyToDerivedTypes="True">
+                <Setter Property="Visual" Value="Material"/>
+            </Style>
+            <Style TargetType="DatePicker" ApplyToDerivedTypes="True">
+                <Setter Property="Visual" Value="Material"/>
+            </Style>
+            <converters:DataValidityToBoolConverter x:Key="validityConverter"/>
+            <converters:DateExpirationToBoolConverter x:Key="dateExpirationToBoolConverter"/>
+            <converters:IntegerDaysToStringPeriods x:Key="integerDaysToStringPeriods"/>
+        </ResourceDictionary>
     </Application.Resources>
-</Application>
+
+</prism:PrismApplication>

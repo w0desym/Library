@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<popupPages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:popupPages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+                      x:Class="Library.Views.Popups.BookDialogPopup">
+
+    <pancake:PancakeView CornerRadius="20"
+                         Padding="20"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         BackgroundColor="White">
+
+        <StackLayout Spacing="20">
+
+            <Label Text="Choose Option"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   TextTransform="Uppercase"/>
+
+            <StackLayout Orientation="Horizontal"
+                         Spacing="20">
+
+                <StackLayout.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="WidthRequest" Value="110"/>
+                        <Setter Property="CornerRadius" Value="15"/>
+                        <Setter Property="TextColor" Value="Black"/>
+                    </Style>
+                </StackLayout.Resources>
+
+                <Button Text="{Binding FirstActionText}"
+                        BackgroundColor="White"
+                        Command="{Binding FirstActionCommand}"/>
+
+                <Button Text="{Binding SecondActionText}"
+                        TextColor="White"
+                        BackgroundColor="DarkGray"
+                        IsEnabled="{Binding IsSecondActionEnabled}"
+                        Command="{Binding SecondActionCommand}"/>
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </pancake:PancakeView>
+
+</popupPages:PopupPage>
